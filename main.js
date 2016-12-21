@@ -1,26 +1,32 @@
-function Calcular() {
-    var vacation = document.getElementById("vacation").value;
-	var weekeday = document.getElementById("dia").value;
+function calcular()
+{
+	var vacation = document.getElementById("vacaciones").value;
+	var weekday = parseInt(document.getElementById("dia").value);
+    
 	var isVacation = true;
-	var weekeday = false;
+	var isWeekday = false;
+    
 	var salida = document.getElementById("salida");
-	
-	if(vacation == "2"){
-        isVacation =false;
-    }
-    else
-    {
-        vacation =true;
-        
-    }
     
-    if(weekeday="1"){
-        isweekeda =true;
-    }
+	if(vacation == "2")
+	{
+		isVacation = false;
+	}
     
-    else{
-        weekeday=false;
-    }
-  
+	if(weekday < 6)
+	{
+		isWeekday = true;
+	}
+    
+	if(isVacation)
+	{
+		salida.innerHTML = "1";
+	}else{
+		if(isWeekday)
+		{
+			salida.innerHTML = "0";
+		}else{
+			salida.innerHTML = "1";
+		}
+	}
 }
-
